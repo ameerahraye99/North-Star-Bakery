@@ -1,0 +1,299 @@
+/* ==========================================================================
+   North Star Bakery — styles.css
+   Mobile-first stylesheet. Layout is built with Flexbox and a single
+   media query expands the design for larger screens.
+
+   Color palette (4 colors):
+     --flour   #FBF3E7  background / light surfaces
+     --espresso #4A2E1F header, headings, footer, body text on light bg
+     --honey   #C97A2B  accent: links, buttons, highlights
+     --charcoal #2E2620 body copy
+
+   Type pairing (2 families):
+     'Fraunces'  — display serif, used for headings only
+     'Work Sans' — body sans-serif, used for everything else
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;600&display=swap');
+
+:root {
+  --flour: #FBF3E7;
+  --espresso: #4A2E1F;
+  --honey: #C97A2B;
+  --charcoal: #2E2620;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Work Sans', Arial, sans-serif;
+
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+}
+
+/* ---------- Reset / base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--flour);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+a {
+  color: var(--honey);
+}
+
+a:hover,
+a:focus {
+  color: var(--espresso);
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  color: var(--espresso);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0.25rem 0;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+
+/* ---------- Header & nav (mobile-first: stacked, centered) ---------- */
+header {
+  background-color: var(--espresso);
+  color: var(--flour);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+}
+
+header h1 {
+  color: var(--flour);
+}
+
+header img {
+  border-radius: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+nav a {
+  color: var(--flour);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--honey);
+  color: var(--espresso);
+}
+
+/* ---------- Main content ---------- */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: #FFFFFF;
+  border: 1px solid #EADFCE;
+  border-radius: 8px;
+  padding: var(--space-md);
+}
+
+/* Product grid: sections wrap into columns once there's room (Flexbox) */
+.product-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.product-grid section {
+  flex: 1 1 100%;
+}
+
+figure {
+  margin: var(--space-sm) 0 0 0;
+}
+
+figcaption {
+  font-style: italic;
+  color: var(--honey);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+audio,
+video {
+  width: 100%;
+}
+
+/* ---------- Form ---------- */
+form fieldset {
+  border: 1px solid var(--honey);
+  border-radius: 8px;
+  padding: var(--space-md);
+}
+
+form legend {
+  font-family: var(--font-display);
+  color: var(--espresso);
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0 0 var(--space-md) 0;
+}
+
+label {
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem;
+  border: 1px solid #C9BBA3;
+  border-radius: 6px;
+  background-color: var(--flour);
+  color: var(--charcoal);
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--honey);
+  outline-offset: 1px;
+}
+
+button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: var(--honey);
+  color: var(--espresso);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover,
+button:focus {
+  background-color: var(--espresso);
+  color: var(--flour);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--espresso);
+  color: var(--flour);
+  text-align: center;
+  padding: var(--space-md);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Responsive layout: larger screens (tablet and up)
+   ========================================================================== */
+@media (min-width: 700px) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Header switches from stacked/centered to a single row */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  main {
+    padding: var(--space-lg);
+  }
+
+  /* Product cards move from one column to a wrapping row */
+  .product-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .product-grid section {
+    flex: 1 1 calc(50% - var(--space-md));
+  }
+
+  form p {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  label {
+    flex: 0 0 160px;
+  }
+
+  input,
+  select,
+  textarea {
+    flex: 1 1 auto;
+  }
+}
