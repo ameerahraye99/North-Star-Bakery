@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>North Star Bakery - Contact</title>
+  <title>North Star Bakery - Contact</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <header>
     <img src="media/bakery-logo.png" alt="North Star Bakery logo, a star above a loaf of bread" width="150">
@@ -29,23 +28,27 @@
 
     <section>
       <h2>Inquiry &amp; Pre-Order Request Form</h2>
-      <form action="#" method="post">
+      <p id="cart-summary"></p>
+      <form action="#" method="post" id="preorder-form">
         <fieldset>
           <legend>Pre-Order &amp; Inquiry Details</legend>
 
           <p>
             <label for="full-name">Full Name:</label><br>
             <input type="text" id="full-name" name="full-name" required minlength="2" placeholder="Jane Smith">
+            <small class="error-message" id="full-name-error"></small>
           </p>
 
           <p>
             <label for="email">Email Address:</label><br>
             <input type="email" id="email" name="email" required placeholder="jane@example.com">
+            <small class="error-message" id="email-error"></small>
           </p>
 
           <p>
             <label for="pickup-date">Preferred Pickup Date:</label><br>
             <input type="date" id="pickup-date" name="pickup-date" required>
+            <small class="error-message" id="pickup-date-error"></small>
           </p>
 
           <p>
@@ -55,6 +58,7 @@
               <option value="pre-order">Pre-Order</option>
               <option value="general-question">General Question</option>
             </select>
+            <small class="error-message" id="request-type-error"></small>
           </p>
 
           <p>
@@ -69,6 +73,7 @@
 
           <p>
             <button type="submit">Submit Request</button>
+            <span id="form-success"></span>
           </p>
         </fieldset>
       </form>
@@ -78,5 +83,6 @@
   <footer>
     <p>&copy; 2026 North Star Bakery. 214 Maple Street. Open Tuesday - Sunday, 7:00 AM - 3:00 PM.</p>
   </footer>
+  <script src="script.js" defer></script>
 </body>
 </html>

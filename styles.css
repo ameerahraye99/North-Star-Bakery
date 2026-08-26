@@ -230,7 +230,106 @@ button:focus {
   background-color: var(--espresso);
   color: var(--flour);
 }
+/* ---------- Pre-Order List feature ---------- */
+.add-to-order {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: var(--espresso);
+  color: var(--flour);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
 
+.add-to-order:hover,
+.add-to-order:focus {
+  background-color: var(--honey);
+  color: var(--espresso);
+}
+
+#pre-order-summary {
+  border: 1px solid var(--honey);
+}
+
+.cart-items {
+  list-style: none;
+  margin: var(--space-sm) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--flour);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.remove-item {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  background-color: transparent;
+  color: var(--honey);
+  border: 1px solid var(--honey);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
+
+.remove-item:hover,
+.remove-item:focus {
+  background-color: var(--honey);
+  color: var(--flour);
+}
+
+.empty-cart-message {
+  font-style: italic;
+  color: var(--charcoal);
+}
+
+#clear-pre-order {
+  font-family: var(--font-body);
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--espresso);
+  border: 1px solid var(--espresso);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#clear-pre-order:hover,
+#clear-pre-order:focus {
+  background-color: var(--espresso);
+  color: var(--flour);
+}
+
+#cart-summary {
+  font-style: italic;
+  color: var(--honey);
+}
+
+/* ---------- Form validation feedback ---------- */
+.error-message {
+  color: #B3261E;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 1.1em;
+}
+
+#form-success {
+  color: #2E7D32;
+  font-weight: 600;
+  margin-left: 0.75rem;
+}
 /* ---------- Footer ---------- */
 footer {
   background-color: var(--espresso);
